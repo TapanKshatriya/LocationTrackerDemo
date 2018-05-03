@@ -535,7 +535,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        Log.e("TimeDifference", "TimeDifference : " + utilities.getTimeDifference(oldCalendar.getTime(), currentCalendar.getTime()));
         textViewTotalTime.setText(utilities.getTimeDifference(oldCalendar.getTime(), currentCalendar.getTime()));
 
-        drawPath(getSharedPreferencesLocation(latitude), getSharedPreferencesLocation(longitude), 23.044563f, 72.524929f);
+        drawPath(getSharedPreferencesLocation(latitude), getSharedPreferencesLocation(longitude), (float) mCurrentLocation.getLatitude(), (float) mCurrentLocation.getLongitude());
 
     }
 
