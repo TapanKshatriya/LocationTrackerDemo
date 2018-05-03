@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.location.tracker.MapsActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/header_gray"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Home"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Reset" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewTime"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center|top"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/white"
+            android:elevation="5dp"
+            android:visibility="gone"
+            app:cardElevation="5dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardUseCompatPadding="true"
+            card_view:contentPadding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="5dp"
+                android:text="Total Shift Time"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewTotalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="5dp"
+                android:text="02h 30m"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </android.support.v7.widget.CardView>
+
+        <com.esafirm.stubutton.StuButton
+            android:id="@+id/stuButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            app:stu_label="Swipe left to start shift" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
+
+
